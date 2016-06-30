@@ -1,0 +1,48 @@
+{
+  "name": "react-md-spinner",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "npm run watch & npm run demo",
+    "watch": "onchange 'src/**/*' -- npm run build",
+    "build": "babel --presets react -d lib/ src/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "demo": "npm run demo:server & npm run demo:watch",
+    "demo:build": "browserify -e demo/entry.js -o demo/bundle.js -t [ babelify ]",
+    "demo:watch": "watchify -e demo/entry.js -o demo/bundle.js -t [ babelify ] -d -v",
+    "demo:server": "browser-sync start -s demo/ -f 'demo/**/*' --no-open --no-ghost --no-notify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsuyoshiwada/react-md-spinner.git"
+  },
+  "author": "tsuyoshiwada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tsuyoshiwada/react-md-spinner/issues"
+  },
+  "homepage": "https://github.com/tsuyoshiwada/react-md-spinner#readme",
+  "peerDependencies": {
+    "react": ">=0.15.0",
+    "react-dom": ">=0.15.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.5.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.13.0",
+    "browserify": "^13.0.1",
+    "material-ui": "^0.15.1",
+    "onchange": "^2.5.0",
+    "react-highlight": "^0.8.0",
+    "react-tap-event-plugin": "^1.0.0",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "inline-style-prefixer": "^1.0.4",
+    "object-assign": "^4.1.0"
+  }
+}
