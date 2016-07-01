@@ -14,10 +14,12 @@ const Keyframe = {
   LAYER_3_FADE_IN_OUT: "layer-3-fade-in-out",
   LAYER_4_FADE_IN_OUT: "layer-4-fade-in-out",
   LEFT_SPIN: "left-spin",
-  RIGHT_SPIN: "right-spin",
+  RIGHT_SPIN: "right-spin"
 };
 
-Object.keys(Keyframe).forEach(key => Keyframe[key] = KEYFRAME_PREFIX + Keyframe[key]);
+Object.keys(Keyframe).forEach(key => {
+  Keyframe[key] = KEYFRAME_PREFIX + Keyframe[key];
+});
 
 
 export const keyframes = {
@@ -66,12 +68,12 @@ export const keyframes = {
     to: { opacity: 0 }
   },
   [Keyframe.LEFT_SPIN]: {
-    "from": { transform: "rotate(130deg)" },
+    from: { transform: "rotate(130deg)" },
     "50%": { transform: "rotate(-5deg)" },
     to: { transform: "rotate(130deg)" }
   },
   [Keyframe.RIGHT_SPIN]: {
-    "from": { transform: "rotate(-130deg)" },
+    from: { transform: "rotate(-130deg)" },
     "50%": { transform: "rotate(5deg)" },
     to: { transform: "rotate(-130deg)" }
   }
@@ -115,7 +117,6 @@ export function getStyles(props) {
     position: "absolute",
     width: "100%",
     height: "100%",
-    opacity: 0,
     whiteSpace: "nowrap",
     animationName: Keyframe.FILL_UNFILL_ROTATE,
     animationDuration: `${duration * colors.length}ms`,
@@ -127,7 +128,7 @@ export function getStyles(props) {
   const layerStyles = colors.map((color, i) =>
     assign({}, layerStyle, {
       borderColor: color,
-      animationName: `${Keyframe.FILL_UNFILL_ROTATE}, ${Keyframe["LAYER_" + (i + 1) + "_FADE_IN_OUT"]}`
+      animationName: `${Keyframe.FILL_UNFILL_ROTATE}, ${Keyframe[`LAYER_${(i + 1)}_FADE_IN_OUT`]}`
     })
   );
 
@@ -171,7 +172,7 @@ export function getStyles(props) {
     animationName: Keyframe.LEFT_SPIN
   }));
 
-  const clip1AfterStyles = colors.map((color, i) =>
+  const clip1AfterStyles = colors.map(color =>
     assign({}, clip1AfterStyle, {
       borderColor: `${color} transparent transparent ${color}`
     })
@@ -183,7 +184,7 @@ export function getStyles(props) {
     animationName: Keyframe.RIGHT_SPIN
   }));
 
-  const clip2AfterStyles = colors.map((color, i) =>
+  const clip2AfterStyles = colors.map(color =>
     assign({}, clip2AfterStyle, {
       borderColor: `${color} ${color} transparent transparent`
     })

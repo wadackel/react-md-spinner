@@ -43,7 +43,7 @@ describe("MDSpinner", () => {
 
       const { animation, width, height } = style;
       assert(Math.round(animation.match(/((?:[1-9]\d*|0)(?:\.\d+)?)ms/)[1]) === 118); // 360 * 100 / (216 + (360 - 270))
-      assert((style.width === 120 && style.height === 120) === true);
+      assert((width === 120 && height === 120) === true);
 
       const layers = span.children();
       assert(layers.at(0).prop("style").borderColor === "rgb(0, 0, 0)");
@@ -93,13 +93,13 @@ describe("MDSpinner", () => {
       const wrapper3 = mount(<MDSpinner />);
       assert(getStyleNodeLength() === 8);
 
-      wrapper1.unmount()
+      wrapper1.unmount();
       assert(getStyleNodeLength() === 8);
 
-      wrapper2.unmount()
+      wrapper2.unmount();
       assert(getStyleNodeLength() === 8);
 
-      wrapper3.unmount()
+      wrapper3.unmount();
       assert(getStyleNodeLength() === 0);
     });
   });
