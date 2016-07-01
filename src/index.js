@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from "react";
 import assign from "object-assign";
 import CSSKeyframer from "css-keyframer";
-import getColors from "./get-colors";
 import { getStyles, keyframes } from "./styles";
 
 
@@ -51,7 +50,6 @@ export default class MDSpinner extends Component {
   render() {
     const { props } = this;
     const { className, style } = props;
-    const colors = getColors(props);
 
     const {
       rootStyle,
@@ -62,24 +60,28 @@ export default class MDSpinner extends Component {
       clip2AfterStyles
     } = getStyles(props);
 
-    const layers = colors.map((color, i) =>
-      <div key={i} style={layerStyles[i]}>
-        <div style={clipStyle}>
-          <div style={clip1AfterStyles[i]} />
-        </div>
-        <div style={clipStyle}>
-          <div style={clip2AfterStyles[i]} />
-        </div>
-        <div style={layerAfterStyle} />
-      </div>
-    );
+    const layers = [];
 
-    const mergedRootStyle = assign({}, rootStyle, rootStyle || {});
+    for (let i = 0; i < 4; i++) {
+      layers.push(
+        <span key={i} style={layerStyles[i]}>
+          <span style={clipStyle}>
+            <span style={clip1AfterStyles[i]} />
+          </span>
+          <span style={clipStyle}>
+            <span style={clip2AfterStyles[i]} />
+          </span>
+          <span style={layerAfterStyle} />
+        </span>
+      );
+    }
+
+    const mergedRootStyle = assign({}, rootStyle, style || {});
 
     return (
-      <div className={className} style={mergedRootStyle}>
+      <span className={className} style={mergedRootStyle}>
         {layers}
-      </div>
+      </span>
     );
   }
 }

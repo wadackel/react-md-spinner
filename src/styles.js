@@ -1,6 +1,5 @@
 import assign from "object-assign";
 import Prefixer from "inline-style-prefixer";
-import getColors from "./get-colors";
 
 
 const prefixer = new Prefixer();
@@ -79,10 +78,25 @@ export const keyframes = {
 };
 
 
+function getColors(props) {
+  const {
+    singleColor,
+    color1,
+    color2,
+    color3,
+    color4
+  } = props;
+
+  return singleColor
+    ? [singleColor, singleColor, singleColor, singleColor]
+    : [color1, color2, color3, color4];
+}
+
+
 export function getStyles(props) {
   const { size, duration } = props;
   const colors = getColors(props);
-  const borderWidth = Math.round(size * 0.107142);
+  const borderWidth = Math.max(1, Math.round(size * 0.107142));
   const arcSize = 270;
   const arcStartRotate = 216;
   const rootDuration = 360 * duration / (arcStartRotate + (360 - arcSize));
