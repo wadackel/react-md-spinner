@@ -173,6 +173,13 @@ class App extends Component {
             <p className="footer__copyright">
               react-md-spinner.js licensed under MIT.<br />
               Made by <a href="https://github.com/tsuyoshiwada">tsuyoshiwada</a>.
+              <MDSpinner
+                size={14}
+                singleColor="#009688"
+                style={{
+                  marginLeft: 10
+                }}
+              />
             </p>
           </div>
         </footer>
