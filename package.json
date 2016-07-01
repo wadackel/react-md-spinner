@@ -1,7 +1,7 @@
 {
   "name": "react-md-spinner",
   "version": "0.0.1",
-  "description": "",
+  "description": "Material Design spinner components for React.js.",
   "main": "lib/index.js",
   "scripts": {
     "start": "npm run watch & npm run test:watch & npm run demo",
@@ -16,6 +16,13 @@
     "demo:watch": "watchify -e demo/entry.js -o demo/bundle.js -d -v & onchange 'demo/bundle.js' -- browser-sync reload",
     "demo:server": "browser-sync start -s demo/ -f 'demo/**/*.html, demo/**/*.css, demo/bundle.js' --no-open --no-ghost --no-notify"
   },
+  "keywords": [
+    "react",
+    "react-component",
+    "material design",
+    "spinner",
+    "loader"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tsuyoshiwada/react-md-spinner.git"
