@@ -41,10 +41,10 @@ export default class MDSpinner extends Component {
   }
 
   componentWillUnmount() {
+    mountedInstanceCount--;
     if (mountedInstanceCount === 0) {
       keyframer.unregisterAll();
     }
-    mountedInstanceCount--;
   }
 
   render() {
