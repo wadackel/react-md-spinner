@@ -53,6 +53,7 @@ html {
 }
 
 body {
+  min-width: 320px;
   background: #efefef;
 }
 
@@ -142,7 +143,7 @@ ul {
 }
 
 .hero__lead {
-  margin: 10px 0 20px;
+  margin: 20px 0;
 }
 
 .hero__install {
@@ -223,9 +224,59 @@ ul {
   padding: 120px 0;
   background: #222;
   color: #fff;
-  text-align: right;
+  text-align: left;
 }
 
 .footer__copyright {
   margin: 0;
+}
+
+
+/* smartphone */
+@media screen and (max-width: 767px) {
+  /* hero */
+  .hero {
+    padding-bottom: 60px;
+  }
+
+  .hero__container,
+  .hero__text,
+  .hero__spinner {
+    display: block;
+    width: auto;
+  }
+
+  .hero__text {
+    margin-bottom: 60px;
+  }
+
+  /* block */
+  .block {
+    margin-bottom: 90px;
+  }
+
+  .block__row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .block__col {
+    float: none;
+    width: auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .block__col + .block__col {
+    margin-top: 30px;
+  }
+}
+
+
+/* small smartphone */
+@media screen and (max-width: 480px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }

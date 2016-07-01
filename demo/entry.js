@@ -22,8 +22,11 @@ class App extends Component {
         <div className="hero">
           <div className="hero__container container">
             <div className="hero__text">
-              <h1 className="hero__logo"><img src="./images/logo@2x.png" width="379" height="60" /></h1>
-              <p className="hero__lead">Material Design spinner components for React.js.</p>
+              <h1 className="hero__logo"><img src="./images/logo@2x.png" width="400" /></h1>
+              <p className="hero__lead">
+                Material Design spinner components for React.js.<br />
+                Because it is made of 100% inline styles, you can start using it right away!
+              </p>
               <div className="hero__install">
                 <Highlight className="bash">
                   {"$ npm install react-md-spinner"}
@@ -167,7 +170,10 @@ class App extends Component {
         {/* Footer */}
         <footer className="footer">
           <div className="footer__container container">
-            <p className="footer__copyright">react-md-spinner.js licensed under MIT.<br />Made by <a href="https://github.com/tsuyoshiwada">tsuyoshiwada</a>.</p>
+            <p className="footer__copyright">
+              react-md-spinner.js licensed under MIT.<br />
+              Made by <a href="https://github.com/tsuyoshiwada">tsuyoshiwada</a>.
+            </p>
           </div>
         </footer>
       </div>
