@@ -53,21 +53,21 @@
     "browser-sync": "^2.13.0",
     "browserify": "^13.0.1",
     "enzyme": "^2.3.0",
-    "eslint": "^2.13.1",
+    "eslint": "^3.0.0",
     "eslint-plugin-react": "^5.2.2",
-    "jsdom": "^9.3.0",
+    "jsdom": "^9.4.0",
     "material-ui": "^0.15.1",
     "mocha": "^2.5.3",
     "onchange": "^2.5.0",
     "power-assert": "^1.4.1",
-    "react-addons-test-utils": "^15.1.0",
+    "react-addons-test-utils": "^15.2.0",
     "react-highlight": "^0.8.0",
     "react-tap-event-plugin": "^1.0.0",
     "watchify": "^3.7.0"
   },
   "dependencies": {
     "css-keyframer": "0.0.1",
-    "inline-style-prefixer": "^1.0.4",
+    "inline-style-prefixer": "^2.0.0",
     "object-assign": "^4.1.0"
   }
 }
