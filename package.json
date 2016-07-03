@@ -69,5 +69,9 @@
     "css-keyframer": "0.0.1",
     "inline-style-prefixer": "^2.0.0",
     "object-assign": "^4.1.0"
-  }
+  },
+  "files": [
+    "lib",
+    "test"
+  ]
 }
