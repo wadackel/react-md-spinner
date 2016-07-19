@@ -54,6 +54,22 @@ describe("MDSpinner", () => {
       wrapper.unmount();
     });
 
+    it("Should be allowed size numeric string", () => {
+      const wrapper = mount(
+        <MDSpinner
+          size="80"
+        />
+      );
+
+      const span = wrapper.find(MDSpinner).find("span").at(0);
+      const style = span.prop("style");
+      const { width, height } = style;
+
+      assert((width === 80 && height === 80) === true);
+
+      wrapper.unmount();
+    });
+
     it("Should be allowed set singleColor", () => {
       const wrapper = mount(
         <MDSpinner
