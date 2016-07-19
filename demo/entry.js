@@ -4,18 +4,22 @@ import Highlight from "react-highlight";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import RaisedButton from "material-ui/RaisedButton";
-import FontIcon from 'material-ui/FontIcon';
 import MDSpinner from "../";
 
 
 injectTapEventPlugin();
 
-const Rect = ({ color }) => {
+function Rect({ color }) {
   return <div className="rect" style={{ backgroundColor: color }} />;
+}
+
+Rect.propTypes = {
+  color: PropTypes.string.isRequired
 };
 
 class App extends Component {
   render() {
+    /* eslint-disable max-len */
     return (
       <div>
         {/* hero */}
@@ -36,7 +40,6 @@ class App extends Component {
                 <li className="hero__button">
                   <RaisedButton
                     primary
-                    linkButton
                     label="Document on GitHub"
                     href="https://github.com/tsuyoshiwada/react-md-spinner"
                   />
@@ -185,6 +188,7 @@ class App extends Component {
         </footer>
       </div>
     );
+    /* eslint-enable max-len */
   }
 }
 
