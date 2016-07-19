@@ -96,9 +96,10 @@ function getColors(props) {
 
 
 export function getStyles(props) {
-  const { size, duration } = props;
+  const { duration } = props;
+  const size = parseInt(props.size, 10);
   const colors = getColors(props);
-  const borderWidth = Math.max(1, Math.round(size * 0.107142));
+  const borderWidth = Math.max(1, Math.round(parseInt(size, 10) * 0.107142));
   const arcSize = 270;
   const arcStartRotate = 216;
   const rootDuration = 360 * duration / (arcStartRotate + (360 - arcSize));
