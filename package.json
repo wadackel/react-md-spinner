@@ -9,7 +9,7 @@
     "build": "babel --presets react -d lib/ src/",
     "test": "npm run lint && npm run mocha",
     "test:watch": "npm run mocha -- -w",
-    "mocha": "mocha test/.setup.js test/**/*.spec.js --compilers js:babel-register",
+    "mocha": "mocha test/**/*.spec.js -r test/.setup --compilers js:babel-register",
     "lint": "eslint src/**/*.js test/**/*.js .eslintrc.js --no-ignore",
     "demo": "npm run demo:server & npm run demo:watch",
     "demo:build": "browserify -e demo/entry.js -o demo/bundle.js",
