@@ -1,9 +1,6 @@
 import assign from "object-assign";
 import Prefixer from "inline-style-prefixer";
 
-
-const prefixer = new Prefixer();
-
 const KEYFRAME_PREFIX = "__react-md-spinner-animation__";
 
 const Keyframe = {
@@ -96,13 +93,14 @@ function getColors(props) {
 
 
 export function getStyles(props) {
-  const { duration } = props;
+  const { duration, userAgent } = props;
   const size = parseInt(props.size, 10);
   const colors = getColors(props);
   const borderWidth = Math.max(1, Math.round(parseInt(size, 10) * 0.107142));
   const arcSize = 270;
   const arcStartRotate = 216;
   const rootDuration = 360 * duration / (arcStartRotate + (360 - arcSize));
+  const prefixer = new Prefixer({ userAgent });
 
   const rootStyle = prefixer.prefix({
     display: "inline-block",
