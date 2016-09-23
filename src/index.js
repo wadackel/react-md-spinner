@@ -11,6 +11,7 @@ let mountedInstanceCount = 0;
 export default class MDSpinner extends Component {
   static propTypes = {
     className: PropTypes.string,
+    userAgent: PropTypes.string,
     style: PropTypes.object,
     singleColor: PropTypes.string,
     size: PropTypes.oneOfType([
