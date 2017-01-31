@@ -1,4 +1,5 @@
 .DS_Store
 *.log*
-tmp
-node_modules
+/tmp
+/lib
+/node_modules
