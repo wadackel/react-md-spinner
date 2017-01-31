@@ -3,6 +3,7 @@ import React from "react";
 import { mount } from "enzyme";
 import MDSpinner from "../src/";
 
+
 describe("MDSpinner", () => {
   describe("Props", () => {
     it("Should be allowed set basic props", () => {
@@ -25,6 +26,7 @@ describe("MDSpinner", () => {
 
       wrapper.unmount();
     });
+
 
     it("Should be allowed set custom props", () => {
       const wrapper = mount(
@@ -54,6 +56,7 @@ describe("MDSpinner", () => {
       wrapper.unmount();
     });
 
+
     it("Should be allowed size numeric string", () => {
       const wrapper = mount(
         <MDSpinner
@@ -69,6 +72,7 @@ describe("MDSpinner", () => {
 
       wrapper.unmount();
     });
+
 
     it("Should be allowed set singleColor", () => {
       const wrapper = mount(
@@ -92,10 +96,12 @@ describe("MDSpinner", () => {
     });
   });
 
+
   describe("Keyframes", () => {
-    function getStyleNodeLength() {
-      return document.head.querySelectorAll("style[data-keyframe]").length;
-    }
+    const getStyleNodeLength = () => (
+      document.head.querySelectorAll("style[data-keyframes]").length
+    );
+
 
     it("Should be register/unregister @keyframes when willMount/willUnmount triggered", () => {
       assert(getStyleNodeLength() === 0);

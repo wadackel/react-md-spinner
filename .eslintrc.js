@@ -95,7 +95,7 @@ module.exports = {
     "computed-property-spacing": "error",
     "consistent-this": ["error", "_this"],
     "eol-last": "error",
-    "func-style": ["error", "declaration"],
+    "func-style": ["error", "expression"],
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "key-spacing": "error",
     "keyword-spacing": "error",
