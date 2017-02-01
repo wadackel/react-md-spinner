@@ -1,0 +1,26 @@
+{
+  "name": "react-md-spinner-server-side-rendering",
+  "private": true,
+  "scripts": {
+    "start": "nodemon server.js --exec babel-node",
+    "build": "webpack",
+    "postinstall": "npm run build"
+  },
+  "author": "tsuyoshiwada",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "nodemon": "^1.11.0",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "express": "^4.14.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
