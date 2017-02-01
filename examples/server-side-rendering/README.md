@@ -8,7 +8,7 @@ It is an example of spinner in Server-Side Rendering.
 
 ## Example
 
-The point is to use `ssrBehaviour` and specify `userAgent`.
+The point is to use `ssrBehavior` and specify `userAgent`.
 
 **Note:** It is a different code from the actual example.
 
