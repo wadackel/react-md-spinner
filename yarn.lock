@@ -1559,9 +1559,9 @@ crypto-browserify@^3.0.0:
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
 
-css-keyframer@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/css-keyframer/-/css-keyframer-1.0.0.tgz#531702ed845791e3906070ffbabde8d5b568b4bd"
+css-keyframer@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/css-keyframer/-/css-keyframer-1.0.1.tgz#441017f3e2d68c92a7a50b8b6766bcb9c8ef090f"
   dependencies:
     exenv "^1.2.1"
     hyphenate-style-name "^1.0.2"

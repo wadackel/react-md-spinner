@@ -67,7 +67,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
-    "css-keyframer": "1.0.0",
+    "css-keyframer": "1.0.1",
     "exenv": "^1.2.1",
     "inline-style-prefixer": "^2.0.5",
     "object-assign": "^4.1.1"
