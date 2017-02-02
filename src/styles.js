@@ -1,6 +1,7 @@
-import assign from "object-assign";
 import Prefixer from "inline-style-prefixer";
+import exenv from "exenv";
 
+const { canUseDOM } = exenv;
 const KEYFRAME_PREFIX = "__react-md-spinner-animation__";
 
 const Keyframe = {
@@ -77,7 +78,7 @@ export const keyframes = {
 };
 
 
-function getColors(props) {
+export const getColors = props => {
   const {
     singleColor,
     color1,
@@ -89,10 +90,37 @@ function getColors(props) {
   return singleColor
     ? [singleColor, singleColor, singleColor, singleColor]
     : [color1, color2, color3, color4];
-}
+};
 
 
-export function getStyles(props) {
+export const autoPrefixAndNormalizeStyles = (prefixer, styles) => {
+  const isFlexBox = ["flex", "inline-flex"].indexOf(
+    styles.hasOwnProperty("display") ? styles.display : null
+  ) > -1;
+
+  const prefixedStyles = prefixer.prefix(styles);
+
+  if (isFlexBox) {
+    const { display } = prefixedStyles;
+    const isArray = Array.isArray(display);
+
+    if (canUseDOM) {
+      prefixedStyles.display = isArray
+        ? display[display.length - 1]
+        : display;
+
+    } else {
+      prefixedStyles.display = isArray
+        ? display.join("; display: ")
+        : display;
+    }
+  }
+
+  return prefixedStyles;
+};
+
+
+export const getStyles = props => {
   const { duration, userAgent } = props;
   const size = parseInt(props.size, 10);
   const colors = getColors(props);
@@ -102,7 +130,7 @@ export function getStyles(props) {
   const rootDuration = 360 * duration / (arcStartRotate + (360 - arcSize));
   const prefixer = new Prefixer({ userAgent });
 
-  const rootStyle = prefixer.prefix({
+  const rootStyle = autoPrefixAndNormalizeStyles(prefixer, {
     display: "inline-block",
     position: "relative",
     width: size,
@@ -111,7 +139,7 @@ export function getStyles(props) {
     animation: `${Keyframe.ROOT_ROTATE} ${rootDuration}ms linear infinite`
   });
 
-  const layerStyle = prefixer.prefix({
+  const layerStyle = autoPrefixAndNormalizeStyles(prefixer, {
     display: "flex",
     position: "absolute",
     width: "100%",
@@ -124,14 +152,13 @@ export function getStyles(props) {
     opacity: 1
   });
 
-  const layerStyles = colors.map((color, i) =>
-    assign({}, layerStyle, {
-      borderColor: color,
-      animationName: `${Keyframe.FILL_UNFILL_ROTATE}, ${Keyframe[`LAYER_${(i + 1)}_FADE_IN_OUT`]}`
-    })
-  );
+  const layerStyles = colors.map((color, i) => ({
+    ...layerStyle,
+    borderColor: color,
+    animationName: `${Keyframe.FILL_UNFILL_ROTATE}, ${Keyframe[`LAYER_${(i + 1)}_FADE_IN_OUT`]}`
+  }));
 
-  const clipStyle = prefixer.prefix({
+  const clipStyle = autoPrefixAndNormalizeStyles(prefixer, {
     display: "inline-block",
     position: "relative",
     flexGrow: 1,
@@ -147,15 +174,17 @@ export function getStyles(props) {
     borderRadius: "50%"
   };
 
-  const layerAfterStyle = prefixer.prefix(assign({}, layerClipAfterStyle, {
+  const layerAfterStyle = autoPrefixAndNormalizeStyles(prefixer, {
+    ...layerClipAfterStyle,
     left: "45%",
     width: "10%",
     borderWidth,
     borderColor: "inherit",
     borderTopStyle: "solid"
-  }));
+  });
 
-  const clipAfterStyle = assign({}, layerClipAfterStyle, {
+  const clipAfterStyle = {
+    ...layerClipAfterStyle,
     bottom: 0,
     width: "200%",
     borderWidth,
@@ -163,31 +192,31 @@ export function getStyles(props) {
     animationDuration: `${duration}ms`,
     animationTimingFunction: "cubic-bezier(.4, 0, .2, 1)",
     animationIterationCount: "infinite"
-  });
+  };
 
-  const clip1AfterStyle = prefixer.prefix(assign({}, clipAfterStyle, {
+  const clip1AfterStyle = autoPrefixAndNormalizeStyles(prefixer, {
+    ...clipAfterStyle,
     left: 0,
     transform: "rotate(129deg)",
     animationName: Keyframe.LEFT_SPIN
+  });
+
+  const clip1AfterStyles = colors.map(color => ({
+    ...clip1AfterStyle,
+    borderColor: `${color} transparent transparent ${color}`
   }));
 
-  const clip1AfterStyles = colors.map(color =>
-    assign({}, clip1AfterStyle, {
-      borderColor: `${color} transparent transparent ${color}`
-    })
-  );
-
-  const clip2AfterStyle = prefixer.prefix(assign({}, clipAfterStyle, {
+  const clip2AfterStyle = autoPrefixAndNormalizeStyles(prefixer, {
+    ...clipAfterStyle,
     left: "-100%",
     transform: "rotate(-129deg)",
     animationName: Keyframe.RIGHT_SPIN
-  }));
+  });
 
-  const clip2AfterStyles = colors.map(color =>
-    assign({}, clip2AfterStyle, {
-      borderColor: `${color} ${color} transparent transparent`
-    })
-  );
+  const clip2AfterStyles = colors.map(color => ({
+    ...clip2AfterStyle,
+    borderColor: `${color} ${color} transparent transparent`
+  }));
 
   return {
     rootStyle,
@@ -197,4 +226,4 @@ export function getStyles(props) {
     clip1AfterStyles,
     clip2AfterStyles
   };
-}
+};
