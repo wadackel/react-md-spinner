@@ -4,17 +4,17 @@
   "description": "Material Design spinner components for React.js.",
   "main": "lib/index.js",
   "scripts": {
-    "start": "npm run watch & npm run test:watch & npm run demo",
+    "start": "npm run watch & npm run test:watch & npm run docs",
     "watch": "onchange 'src/**/*' -- npm run build",
     "build": "babel --presets react -d lib/ src/",
     "test": "npm run lint && npm run mocha",
     "test:watch": "npm run mocha -- -w",
     "mocha": "mocha test/**/*.spec.js -r test/.setup --compilers js:babel-register",
     "lint": "eslint src/**/*.js test/**/*.js .eslintrc.js --no-ignore",
-    "demo": "npm run demo:server & npm run demo:watch",
-    "demo:build": "browserify -e demo/entry.js -o demo/bundle.js",
-    "demo:watch": "watchify -e demo/entry.js -o demo/bundle.js -d -v & onchange 'demo/bundle.js' -- browser-sync reload",
-    "demo:server": "browser-sync start -s demo/ -f 'demo/**/*.html, demo/**/*.css, demo/bundle.js' --no-open --no-ghost --no-notify"
+    "docs": "npm run docs:server & npm run docs:watch",
+    "docs:build": "browserify -e docs/entry.js -o docs/bundle.js",
+    "docs:watch": "watchify -e docs/entry.js -o docs/bundle.js -d -v & onchange 'docs/bundle.js' -- browser-sync reload",
+    "docs:server": "browser-sync start -s docs/ -f 'docs/**/*.html, docs/**/*.css, docs/bundle.js' --no-open --no-ghost --no-notify"
   },
   "keywords": [
     "react",
