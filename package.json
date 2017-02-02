@@ -1,6 +1,6 @@
 {
   "name": "react-md-spinner",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Material Design spinner components for React.js.",
   "main": "lib/index.js",
   "scripts": {
