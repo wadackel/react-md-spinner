@@ -23,6 +23,7 @@ See demo page: https://tsuyoshiwada.github.io/react-md-spinner/
     - [Props](#props)
     - [ssrBehavior](#ssrbehavior)
 * [License](#license)
+* [ChangeLog](#changelog)
 * [Development](#development)
 * [Contribution](#contribution)
 * [Author](#author)
@@ -216,10 +217,15 @@ HTML(/* User-Agent */);
 
 
 
-
 ## License
 
-Released under the [MIT Licence](./LICENSE)
+Released under the [MIT License](./LICENSE)
+
+
+
+## ChangeLog
+
+See [CHANGELOG.md](./CHANGELOG.md)
 
 
 
