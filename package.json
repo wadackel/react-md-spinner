@@ -69,7 +69,7 @@
   "dependencies": {
     "css-keyframer": "1.0.1",
     "exenv": "^1.2.1",
-    "inline-style-prefixer": "^2.0.5"
+    "inline-style-prefixer": "^3.0.1"
   },
   "files": [
     "lib",
