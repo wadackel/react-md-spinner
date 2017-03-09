@@ -10,7 +10,7 @@
     "test": "npm run lint && npm run mocha",
     "test:watch": "npm run mocha -- -w",
     "mocha": "mocha test/**/*.spec.js -r test/.setup --compilers js:babel-register",
-    "lint": "eslint src/**/*.js test/**/*.js .eslintrc.js --no-ignore",
+    "lint": "eslint 'src/**/*.js' 'test/**/*.js' '.eslintrc.js' --no-ignore",
     "docs": "npm run docs:server & npm run docs:watch",
     "docs:build": "browserify -e docs/entry.js -o docs/bundle.js",
     "docs:watch": "watchify -e docs/entry.js -o docs/bundle.js -d -v & onchange 'docs/bundle.js' -- browser-sync reload",
