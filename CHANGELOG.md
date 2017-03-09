@@ -1,3 +1,9 @@
+## 0.2.1 (2017-03-09)
+
+* Update dev/dependencies.
+    - [rofrischmann/inline-style-prefixer](https://github.com/rofrischmann/inline-style-prefixer) update to `3.0.1`.
+
+
 ## 0.2.0 (2017-02-02)
 
 ### New features
