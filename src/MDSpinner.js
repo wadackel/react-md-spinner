@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import exenv from "exenv";
 import CSSKeyframer from "css-keyframer";
 import { getStyles, keyframes } from "./styles";
