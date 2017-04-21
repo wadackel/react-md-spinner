@@ -39,8 +39,8 @@
     ]
   },
   "peerDependencies": {
-    "react": ">=0.15.0",
-    "react-dom": ">=0.15.0"
+    "react": ">=15.3.0",
+    "react-dom": ">=15.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -69,7 +69,8 @@
   "dependencies": {
     "css-keyframer": "1.0.1",
     "exenv": "^1.2.1",
-    "inline-style-prefixer": "^3.0.1"
+    "inline-style-prefixer": "^3.0.1",
+    "prop-types": "^15.5.8"
   },
   "files": [
     "lib",
