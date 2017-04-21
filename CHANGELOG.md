@@ -1,3 +1,10 @@
+## 0.2.2 (2017-04-21)
+
+* Use 'prop-types' package instead of React.PropTypes. ([#6](https://github.com/tsuyoshiwada/react-md-spinner/pull/6))
+  Thanks [@MichaelDeBoey](https://github.com/MichaelDeBoey).
+
+
+
 ## 0.2.1 (2017-03-09)
 
 * Update dev/dependencies.
