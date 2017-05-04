@@ -67,9 +67,10 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "caniuse-api": "^1.6.1",
     "css-keyframer": "1.0.1",
     "exenv": "^1.2.1",
-    "inline-style-prefixer": "^3.0.1",
+    "inline-style-prefixer": "^3.0.3",
     "prop-types": "^15.5.8"
   },
   "files": [
