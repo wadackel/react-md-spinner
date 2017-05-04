@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from "react";
-import MDSpinner from "../../../";
+import MDSpinner from "../../../src/MDSpinner";
 
 
 export default class App extends Component {
