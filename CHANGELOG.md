@@ -1,6 +1,15 @@
+## 0.2.3 (2017-05-08)
+
+* [rofrischmann/inline-style-prefixer](https://github.com/rofrischmann/inline-style-prefixer) update to `3.0.3`. [#8](https://github.com/tsuyoshiwada/react-md-spinner/pull/8)  
+  Thanks [@MichaelDeBoey](https://github.com/MichaelDeBoey).
+* Bump 'react-highlight' dependency.
+* Add dependencies [caniuse-api](https://github.com/nyalab/caniuse-api) package.
+
+
+
 ## 0.2.2 (2017-04-21)
 
-* Use 'prop-types' package instead of React.PropTypes. ([#6](https://github.com/tsuyoshiwada/react-md-spinner/pull/6))
+* Use 'prop-types' package instead of React.PropTypes. ([#6](https://github.com/tsuyoshiwada/react-md-spinner/pull/6))  
   Thanks [@MichaelDeBoey](https://github.com/MichaelDeBoey).
 
 
