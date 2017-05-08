@@ -1,5 +1,4 @@
-<img src="https://raw.githubusercontent.com/tsuyoshiwada/react-md-spinner/images/logo%402x.png" width="400" height="51.5" />
-================
+# <img src="https://raw.githubusercontent.com/tsuyoshiwada/react-md-spinner/images/logo%402x.png" width="400" height="51.5" />
 
 [![Build Status](http://img.shields.io/travis/tsuyoshiwada/react-md-spinner.svg?style=flat-square)](https://travis-ci.org/tsuyoshiwada/react-md-spinner)
 [![npm version](https://img.shields.io/npm/v/react-md-spinner.svg?style=flat-square)](http://badge.fury.io/js/react-md-spinner)
