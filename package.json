@@ -3,6 +3,7 @@
   "version": "0.2.3",
   "description": "Material Design spinner components for React.js.",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "start": "npm run watch & npm run test:watch & npm run docs",
     "watch": "onchange 'src/**/*' -- npm run build",
