@@ -16,3 +16,8 @@ export interface MDSpinnerProps {
 export default class MDSpinner extends Component<MDSpinnerProps, undefined> { 
   /* explicitly empty */
 }
+
+declare namespace ssrBehavior {
+  export function getStylesheetString(userAgent: string): string;
+  export function getStylesheetComponent(userAgent: string): Component<undefined, undefined>;
+}
