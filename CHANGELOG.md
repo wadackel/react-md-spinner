@@ -1,3 +1,9 @@
+## 0.2.4 (2017-05-22)
+
+* Add type declaration file for typescript [#9](https://github.com/tsuyoshiwada/react-md-spinner/pull/9)  
+  Thanks [@devholic](https://github.com/devholic) !!
+
+
 ## 0.2.3 (2017-05-08)
 
 * [rofrischmann/inline-style-prefixer](https://github.com/rofrischmann/inline-style-prefixer) update to `3.0.3`. [#8](https://github.com/tsuyoshiwada/react-md-spinner/pull/8)  
