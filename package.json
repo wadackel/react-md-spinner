@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run watch & npm run test:watch & npm run docs",
     "watch": "onchange 'src/**/*' -- npm run build",
-    "build": "babel --presets react -d lib/ src/",
+    "build": "babel --presets react -d lib/ src/ && cpx 'src/index.d.ts' lib/",
     "test": "npm run lint && npm run mocha",
     "test:watch": "npm run mocha -- -w",
     "mocha": "mocha test/**/*.spec.js -r test/.setup --compilers js:babel-register",
@@ -15,7 +15,8 @@
     "docs": "npm run docs:server & npm run docs:watch",
     "docs:build": "browserify -e docs/entry.js -o docs/bundle.js",
     "docs:watch": "watchify -e docs/entry.js -o docs/bundle.js -d -v & onchange 'docs/bundle.js' -- browser-sync reload",
-    "docs:server": "browser-sync start -s docs/ -f 'docs/**/*.html, docs/**/*.css, docs/bundle.js' --no-open --no-ghost --no-notify"
+    "docs:server": "browser-sync start -s docs/ -f 'docs/**/*.html, docs/**/*.css, docs/bundle.js' --no-open --no-ghost --no-notify",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "react",
@@ -54,6 +55,7 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.18.8",
     "browserify": "^14.1.0",
+    "cpx": "^1.5.0",
     "enzyme": "^2.7.1",
     "eslint": "^3.17.1",
     "eslint-plugin-react": "^6.10.0",
