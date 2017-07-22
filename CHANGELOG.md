@@ -1,3 +1,9 @@
+## 0.2.5 (2017-07-22)
+
+* Changes unused Component types from `undefined` to `{}`  
+  Thanks [@nbgraham](https://github.com/nbgraham) !
+
+
 ## 0.2.4 (2017-05-22)
 
 * Add type declaration file for typescript [#9](https://github.com/tsuyoshiwada/react-md-spinner/pull/9)  
