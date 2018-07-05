@@ -41,7 +41,7 @@ $ npm install react-md-spinner
 ## Features
 
 * You can start using with zero configuration!
-* Support to change of color and size and animation speed.
+* Support to change of color, size, border, and animation speed.
 * It can also be used in single color.
 * Support Server-Side Rendering.
 
