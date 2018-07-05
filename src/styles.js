@@ -121,10 +121,10 @@ export const autoPrefixAndNormalizeStyles = (prefixer, styles) => {
 
 
 export const getStyles = props => {
-  const { duration, userAgent } = props;
+  const { duration, userAgent, borderSize } = props;
   const size = parseInt(props.size, 10);
+  const borderWidth = borderSize || Math.max(1, Math.round(parseInt(size, 10) * 0.107142));
   const colors = getColors(props);
-  const borderWidth = Math.max(1, Math.round(parseInt(size, 10) * 0.107142));
   const arcSize = 270;
   const arcStartRotate = 216;
   const rootDuration = 360 * duration / (arcStartRotate + (360 - arcSize));
