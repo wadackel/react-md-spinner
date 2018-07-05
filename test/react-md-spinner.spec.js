@@ -100,19 +100,15 @@ describe("MDSpinner", () => {
       const wrapper = mount(
         <MDSpinner
           size="80"
-          borderSize={0.5}
+          borderSize={7}
         />
       );
 
-      const span = wrapper.find(MDSpinner).find("span").at(0);
+      const span = wrapper.find(MDSpinner).find("span").at(5);
       const style = span.prop("style");
-      const {
-        width,
-        height
-      } = style;
+      const { borderWidth } = style;
 
-      assert((width === 80 && height === 80) === true);
-
+      assert((borderWidth === 7) === true);
       wrapper.unmount();
     });
   });
