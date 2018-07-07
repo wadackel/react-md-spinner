@@ -1,3 +1,9 @@
+## 0.3.0 (2018-07-08)
+
+* Add `borderSize` props.  
+  Thanks [@dbalas](https://github.com/dbalas) !
+
+
 ## 0.2.5 (2017-07-22)
 
 * Changes unused Component types from `undefined` to `{}`  
