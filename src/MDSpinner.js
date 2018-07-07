@@ -17,6 +17,7 @@ class MDSpinner extends Component {
       PropTypes.number,
       PropTypes.string
     ]),
+    borderSize: PropTypes.number,
     duration: PropTypes.number,
     color1: PropTypes.string,
     color2: PropTypes.string,

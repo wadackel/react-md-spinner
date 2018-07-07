@@ -86,6 +86,37 @@ class App extends Component {
               </div>
             </div>
 
+
+             {/* border size */}
+            <div className="block">
+              <h2 className="block__title">Border size</h2>
+              <div className="block__row">
+                <div className="block__col">
+                  <div className="block__body">
+                    <p>You can easily specify a border size. (Default to a custom formula from size.)</p>
+                  </div>
+                </div>
+                <div className="block__col">
+                  <Highlight className="html">
+                    {`<div>
+  <MDSpinner size={70} borderSize={1} />
+  <MDSpinner size={70} borderSize={3} />
+  <MDSpinner size={70} borderSize={5} />
+  <MDSpinner size={70} borderSize={7} />
+  <MDSpinner size={70} borderSize={10} />
+</div>`}
+                  </Highlight>
+                </div>
+              </div>
+              <div className="block__result">
+                <MDSpinner size={70} borderSize={1} />
+                <MDSpinner size={70} borderSize={3} />
+                <MDSpinner size={70} borderSize={5} />
+                <MDSpinner size={70} borderSize={7} />
+                <MDSpinner size={70} borderSize={10} />
+              </div>
+            </div>
+
             {/* Duration */}
             <div className="block">
               <h2 className="block__title">Duration</h2>

@@ -41,7 +41,7 @@ $ npm install react-md-spinner
 ## Features
 
 * You can start using with zero configuration!
-* Support to change of color and size and animation speed.
+* Support to change of color, size, border and animation speed.
 * It can also be used in single color.
 * Support Server-Side Rendering.
 
@@ -144,9 +144,10 @@ You can set the following properties.
 |:--------------|:-------------------|:--------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
 | `className`   | `string`           | `undefined`                           | Set the `className` for the component.                                                                                                       |
 | `style`       | `object`           | `undefined`                           | Set the root element style in the component.                                                                                                 |
-| `size`        | `number`, `string` | `28`                                  | Set the size (diameter) of the spinner circle.                                                                                                                     |
-| `duration`    | `number`           | `1333`                                | Set the animation duration (ms) of the spinner.                                                                                                   |
-| `color1`      | `string`           | ![color1][color1] `rgb(66, 165, 245)` | The color of the spinner. Can be set to any valid CSS string (hex, rgb, rgba).                                                                                            |
+| `size`        | `number`, `string` | `28`                                  | Set the size (diameter) of the spinner circle.                                                                                               |
+| `borderSize`  | `number`           | `Custom formula from size`            | Set the spinner border size of.                                                                                                              |
+| `duration`    | `number`           | `1333`                                | Set the animation duration (ms) of the spinner.                                                                                              |
+| `color1`      | `string`           | ![color1][color1] `rgb(66, 165, 245)` | The color of the spinner. Can be set to any valid CSS string (hex, rgb, rgba).                                                               |
 | `color2`      | `string`           | ![color2][color2] `rgb(239, 83, 80)`  | Same as above                                                                                                                                |
 | `color3`      | `string`           | ![color3][color3] `rgb(253, 216, 53)` | Same as adove                                                                                                                                |
 | `color4`      | `string`           | ![color4][color4] `rgb(76, 175, 80)`  | Same as adove                                                                                                                                |

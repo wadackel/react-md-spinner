@@ -94,6 +94,23 @@ describe("MDSpinner", () => {
 
       wrapper.unmount();
     });
+
+
+    it("Should be allowed set border size", () => {
+      const wrapper = mount(
+        <MDSpinner
+          size="80"
+          borderSize={7}
+        />
+      );
+
+      const span = wrapper.find(MDSpinner).find("span").at(5);
+      const style = span.prop("style");
+      const { borderWidth } = style;
+
+      assert((borderWidth === 7) === true);
+      wrapper.unmount();
+    });
   });
 
 
