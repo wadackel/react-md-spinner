@@ -44,7 +44,7 @@ class MDSpinner extends Component {
     });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.registerKeyframesIfNeeded();
 
     MDSpinner.mountedInstanceCount++;
