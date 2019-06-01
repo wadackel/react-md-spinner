@@ -149,9 +149,9 @@ You can set the following properties.
 | `duration`    | `number`           | `1333`                                | Set the animation duration (ms) of the spinner.                                                                                              |
 | `color1`      | `string`           | ![color1][color1] `rgb(66, 165, 245)` | The color of the spinner. Can be set to any valid CSS string (hex, rgb, rgba).                                                               |
 | `color2`      | `string`           | ![color2][color2] `rgb(239, 83, 80)`  | Same as above                                                                                                                                |
-| `color3`      | `string`           | ![color3][color3] `rgb(253, 216, 53)` | Same as adove                                                                                                                                |
-| `color4`      | `string`           | ![color4][color4] `rgb(76, 175, 80)`  | Same as adove                                                                                                                                |
-| `singleColor` | `string`           | `undefined`                           | Same as adove. Use this if the spinner should be in only one single color. The settings (props) for `color1` ~ `4` will be ignored by setting this `singleColor` property.                                               |
+| `color3`      | `string`           | ![color3][color3] `rgb(253, 216, 53)` | Same as above                                                                                                                                |
+| `color4`      | `string`           | ![color4][color4] `rgb(76, 175, 80)`  | Same as above                                                                                                                                |
+| `singleColor` | `string`           | `undefined`                           | Same as above. Use this if the spinner should be in only one single color. The settings (props) for `color1` ~ `4` will be ignored by setting this `singleColor` property.                                               |
 | `userAgent`   | `string`           | `undefined`                           | Set the value of the current User Agent when generating inline styles, so that server-rendered markup is identical to client-rendered markup |
 
 [color1]:https://raw.githubusercontent.com/tsuyoshiwada/react-md-spinner/images/color1.png
