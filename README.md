@@ -160,28 +160,28 @@ Set the animation duration (ms) of the spinner.
 ### `color1`
 
 **type:** `string`  
-**default:** ![color1][color1] `rgb(66, 165, 245)`
+**default:** !`rgb(66, 165, 245)`
 
 The color of the spinner. Can be set to any valid CSS string (hex, rgb, rgba).
 
 ### `color2`
 
 **type:** `string`  
-**default:** ![color2][color2] `rgb(239, 83, 80)`
+**default:** `rgb(239, 83, 80)`
 
 Same as above.
 
 ### `color3`
 
 **type:** `string`  
-**default:** ![color3][color3] `rgb(253, 216, 53)`
+**default:** `rgb(253, 216, 53)`
 
 Same as above.
 
 ### `color4`
 
 **type:** `string`  
-**default:** ![color4][color4] `rgb(76, 175, 80)`
+**default:** `rgb(76, 175, 80)`
 
 Same as above.
 
@@ -191,11 +191,6 @@ Same as above.
 **default:** `undefined`
 
 Same as above. Use this if the spinner should be in only one single color. The settings (props) for `color1` ~ `4` will be ignored by setting this `singleColor` property.
-
-[color1]: https://raw.githubusercontent.com/tsuyoshiwada/react-md-spinner/images/color1.png
-[color2]: https://raw.githubusercontent.com/tsuyoshiwada/react-md-spinner/images/color2.png
-[color3]: https://raw.githubusercontent.com/tsuyoshiwada/react-md-spinner/images/color3.png
-[color4]: https://raw.githubusercontent.com/tsuyoshiwada/react-md-spinner/images/color4.png
 
 ## API
 
