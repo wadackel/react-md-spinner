@@ -1,6 +1,6 @@
 {
   "name": "react-md-spinner",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Material Design Spinner components for React.js.",
   "main": "dist/react-md-spinner.cjs.js",
   "module": "dist/react-md-spinner.esm.js",
