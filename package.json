@@ -20,7 +20,7 @@
     "storybook:build": "build-storybook",
     "release": "np",
     "postrelease": "npm-run-all storybook:build deploy",
-    "deploy": "bs --directory storybook-static"
+    "deploy": "gh-pages -d storybook-static"
   },
   "keywords": [
     "react",
@@ -70,12 +70,12 @@
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-macros": "^2.6.1",
-    "branchsite": "^4.0.3",
     "browser-sync": "^2.26.7",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
+    "gh-pages": "^2.0.1",
     "husky": "^2.4.0",
     "jest": "^24.8.0",
     "jest-dom": "^3.5.0",
