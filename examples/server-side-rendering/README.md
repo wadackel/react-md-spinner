@@ -1,79 +1,64 @@
-Example: Server-Side rendering
-==============================
+# Example: Server-Side rendering
 
-It is an example of spinner in Server-Side Rendering.
+An example of spinner in Server-Side Rendering.
 
 ![Screenshot](./screenshot.gif)
 
-
 ## Example
 
-The point is to use `ssrBehavior` and specify `userAgent`.
-
-**Note:** It is a different code from the actual example.
-
-### Client-Side:
+The point is to use `ssrBehavior`.
 
 ```javascript
-import React from "react";
-import { render } from "react-dom";
-import App from "./App";
+import { ssrBehavior } from "react-md-spinner";
 
-render(
-  <App userAgent={window.navigator.userAgent} />,
-  document.getElementById("app")
-);
-```
-
-### Server-Side:
-
-```javascript
-const html = (root, userAgent) => `<!DOCTYPE html>
-  <html lang="en">
+const html = (root: JSX.Element) => `<html lang="en">
   <head>
-    ${ssrBehavior.getStylesheetString(userAgent)}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    ${ssrBehavior.getStylesheetString()}
   </head>
   <body>
     <div id="app">${renderToString(root)}</div>
-    <script src="./bundle.js"></script>
+    <script defer src="/client.js"></script>
   </body>
 </html>`;
 
-app.get("/", (req, res) => {
-  const userAgent = req.headers["user-agent"];
-
-  res.status(200).send(html(
-    <App userAgent={userAgent} />,
-    userAgent
-  ));
+app.get("/", (_req, res) => {
+  res.status(200).send(`<!doctype html>${renderer(<App />)}`);
 });
 ```
 
 ### App
 
 ```javascript
-class App extends Component {
-  render() {
-    return <MDSpinner
-      userAgent={this.props.userAgent}
-    />;
-  }
-}
-```
+import React, { useState, useEffect } from "react";
+import MDSpinner from "react-md-spinner";
 
+export const App: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return (
+    <div>
+      <h1>{mounted ? "Mounted" : "Loading..."}</h1>
+      <MDSpinner />
+    </div>
+  );
+};
+```
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `$ npm start`
 
-### `npm start`
+Runs the app.  
+Open http://localhost:8080 to view it in the browser.
 
-Runs the app.
-Open `http://localhost:8080` to view it in the browser.
+### `$ npm run build`
 
-
-### `npm run build`
-
-Build the client side code. Server-Side uses `babel-node`.
-
+Build the client side and server side code.

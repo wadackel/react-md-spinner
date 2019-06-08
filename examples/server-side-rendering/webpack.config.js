@@ -1,24 +1,45 @@
 const path = require("path");
+const nodeExternals = require("webpack-node-externals");
 
-module.exports = {
-  debug: true,
-  devtool: "inline-source-map",
-  entry: "./src/index.js",
-  output: {
-    filename: "bundle.js",
-    path: `${__dirname}/dist`
+const common = {
+  mode: "development",
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
+    modules: [path.join(__dirname, "src"), "node_modules"]
   },
-
-  resolveLoader: {
-    modulesDirectories: [
-      path.resolve(__dirname, "../../node_modules/"),
-      path.resolve(__dirname, "node_modules/")
-    ]
-  },
-
   module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loaders: ["babel"] }
+    rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: [{ loader: "babel-loader" }]
+      }
     ]
   }
 };
+
+module.exports = [
+  {
+    ...common,
+    target: "web",
+    entry: path.join(__dirname, "src", "client", "index.tsx"),
+    output: {
+      path: path.join(__dirname, "dist", "public"),
+      filename: "client.js"
+    }
+  },
+  {
+    ...common,
+    target: "node",
+    entry: path.join(__dirname, "src", "server", "index.tsx"),
+    output: {
+      path: path.join(__dirname, "dist"),
+      filename: "server.js"
+    },
+    externals: nodeExternals(),
+    node: {
+      __dirname: false,
+      __filename: false
+    }
+  }
+];
