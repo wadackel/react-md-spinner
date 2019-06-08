@@ -1,3 +1,33 @@
+# CHANGELOG
+
+## 1.0.0 (2019-06-09)
+
+### New Features
+
+- Rewrite with TypeScript!
+- Small bundle size!!
+- Build process using rollup and babel. (support `module` field)
+- Storybook examples.
+
+### Breaking Changes
+
+- Remove `useAgent` props. (always vendor prefixes)
+- Remove `useAgent` argument on `ssrBehavior` API.
+
+Changed to use `stylis` instead of `inline-style-prefixer`. Along with that, we now always have a vendor prefix for styles in `@keyframes`.
+
+These changes have the benefit of reducing the bundle size.
+
+### Internal Changes
+
+- TSLint -> ESLint.
+- Using Prettier.
+- Using Dependabot.
+
+## 0.4.0 (2019-06-01)
+
+- Replace deprecated lifecycle hook. Thanks [@ChrisBrownie55](https://github.com/ChrisBrownie55) !
+
 ## 0.3.0 (2018-07-08)
 
 - Add `borderSize` props.  
